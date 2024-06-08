@@ -1,0 +1,26 @@
+.footer-style{
+    background-color: #d0d8ff;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 25px;
+    border-radius: 5px;
+
+    span{
+        font-size: 13px;
+    }
+
+    ul{
+        list-style-type: none;
+        display: flex;
+        gap: 20px;
+        li{
+            a{
+              text-decoration: none;
+            }
+            svg{
+                font-size: 13px;
+                transition: 0.3s ease-in-out;
+            }
+        }
+    }
+}

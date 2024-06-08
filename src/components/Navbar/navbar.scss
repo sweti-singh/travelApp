@@ -1,0 +1,117 @@
+@import '../../variables.scss';
+
+.navbar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $zIndexNavbar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  font-size: 2rem;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.navbar-container .logo a {
+  margin-left: 3rem;
+  font-size: 3rem;
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 600;
+}
+
+.navbar-container .navigation {
+  position: relative;
+}
+
+.navbar-container .navigation .navlinks .link-style {
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 2rem;
+  transition: 1s ease;
+  margin-right: 3rem;
+  position: relative;
+}
+
+.navbar-container .navigation .navlinks .link-style::before {
+  content: "";
+  height: 0.4rem;
+  width: 0%;
+  background-color: white;
+  transition: 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.navbar-container .navigation .navlinks .link-style:hover::before {
+  width: 100%;
+}
+
+@media (max-width: 1040px) {
+//   .navbar-container.active {
+//     height: 100;
+//     transition: 1s ease;
+//   }
+
+  .navbar-container .navigation {
+    display: none;
+  }
+  .navbar-container .navigation.active {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.5);
+    transition: 1s ease;
+  }
+
+  .navbar-container .navigation .navlinks .link-style {
+    color: #222;
+    font-size: 1.2em;
+    margin: 20px;
+  }
+  .navbar-container .navigation .navlinks .link-style:before {
+    background: #222;
+    height: 5px;
+  }
+  .navbar-container .navigation .navlinks {
+    background: #fff;
+    width: 60rem;
+    max-width: 60rem;
+    margin: 3rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  }
+  .menu-btn {
+    background: url(../../assets/hamburger.png) no-repeat;
+    background-size: 30px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: #fff;
+  }
+  .menu-btn.active {
+    background: url(../../assets/close.png) no-repeat;
+    color: #fff;
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+} /*# sourceMappingURL=navbar.css.map */

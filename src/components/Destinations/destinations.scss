@@ -1,0 +1,225 @@
+.destination-container {
+  width: 100%;
+  height: 100%;
+  padding: 4rem;
+}
+
+.grid-container {
+  padding: 4rem;
+  display: grid;
+  gap: 2rem;
+  border: 2px solid rgb(197, 194, 194);
+  box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  background-color: rgb(238, 237, 237);
+  border-radius: 10px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "a a g g b b"
+    "a a c c c h"
+    "d d f f e e"
+    "d d f f e e";
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+    background-color: rgb(146, 7, 146);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+
+    .text-1{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+  text-align: center;
+  word-wrap: break-word;
+  z-index: 1;
+  padding: 2rem;
+  text-shadow: 0 0 0.5rem #808080;
+
+  h1{
+    color: white;
+    font-size: 5rem;
+  }
+
+  p{
+    color: white;
+    font-size: 2rem;
+    font-family: 'Roboto';
+    font-weight: 500;
+  }   
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.5;
+      transition: 2s ease;
+      border-radius: 10px;
+      background:linear-gradient(to bottom right, rgba(248, 178, 248, 0.938), rgba(192, 63, 202, 0.5));
+    }
+
+    &:hover{
+      transform: scale(0.9);
+      .overlay {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+h1{
+font-size: 5rem;
+font-weight: 900;
+margin: 2rem;
+font-family: 'Roboto';
+}
+
+.card:nth-child(1) {
+    grid-area: a;
+  }
+  .card:nth-child(2) {
+    grid-area: b;
+  }
+  .card:nth-child(3) {
+    grid-area: c;
+  }
+  .card:nth-child(4) {
+    grid-area: d;
+  }
+  .card:nth-child(5) {
+    grid-area: e;
+  }
+  .card:nth-child(6) {
+    grid-area: f;
+  }
+  .card:nth-child(7) {
+    grid-area: g;
+  }
+  .card:nth-child(8) {
+    grid-area: h;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+
+    .box-1{
+        background-color: rgb(246, 83, 246);
+        width: 100%;
+        min-height: 25rem;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: aqua;
+    }
+
+    .box-2{
+        background-color: rgb(184, 104, 169);
+        width: 100%;
+        min-height: 25rem;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: aqua;
+    }
+  }
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media (max-width:1200px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(10rem, auto);
+        grid-template-areas:
+          "a a g g"
+          "a a c c"
+          "d d f f"
+          "d d f f"
+          "e e b b"
+          "e e h h";
+
+          .card{
+            .card:nth-child(8){
+              .box-1{
+                h1{font-size: 3rem;}
+              }
+              .box-2{
+                h1{font-size: 3rem;}
+              }
+            }
+            .text-1{
+              h1{
+                font-size: 3rem;
+              }
+              p{
+                font-size: 2rem;
+              }
+            }
+          }
+      }
+}
+
+@media (max-width:800px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(15rem, 30rem);
+        grid-template-areas:
+          "a a"
+          "a a"
+          "b b"
+          "g g"
+          "c c"
+          "d d"
+          "h h"
+          "e e"
+          "f f";
+        
+      }
+
+      .grid-container .card:nth-child(8) {
+        // grid-area: h;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
+    
+        .box-1{
+            background-color: yellow;
+            width: 50%;
+            height: 100%;
+            h1{
+              font-size: 3rem;
+            }
+        }
+    
+        .box-2{
+            background-color: green;
+            width: 50%;
+            height: 100%;
+            h1{
+              font-size: 3rem;
+            }
+        }
+      }
+}

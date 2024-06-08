@@ -1,0 +1,22 @@
+.footer-style {
+  background-color: #d0d8ff;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 25px;
+  border-radius: 5px;
+}
+.footer-style span {
+  font-size: 13px;
+}
+.footer-style ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+.footer-style ul li a {
+  text-decoration: none;
+}
+.footer-style ul li svg {
+  font-size: 13px;
+  transition: 0.3s ease-in-out;
+}/*# sourceMappingURL=footer.css.map */
